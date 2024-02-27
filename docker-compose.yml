@@ -1,0 +1,28 @@
+version: "3"
+services:
+  registry-ui:
+    image: joxit/docker-registry-ui:main
+    ports:
+      - 5050:80
+    environment:
+      - SINGLE_REGISTRY=true
+      - REGISTRY_TITLE=Docker Registry UI
+      - NGINX_PROXY_PASS_URL=http://host.docker.internal:5000
+      - DELETE_IMAGES=true
+      - SHOW_CONTENT_DIGEST=true
+      - SHOW_CATALOG_NB_TAGS=true
+      - CATALOG_MIN_BRANCHES=1
+      - CATALOG_MAX_BRANCHES=1
+      - TAGLIST_PAGE_SIZE=100
+      - REGISTRY_SECURED=false
+      - CATALOG_ELEMENTS_LIMIT=1000
+  deployment-manager:
+    build:
+      context: ./deployment-manager
+    ports:
+      - 127.0.0.1:3030:3030
+    environment:
+      - REGISTRY_URL=http://host.docker.internal:5000
+      - KUBECONFIG=/root/.kube/config
+    volumes:
+      - ./kubeconfig.yml:/root/.kube/config

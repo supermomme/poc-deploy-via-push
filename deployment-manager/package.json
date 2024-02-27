@@ -1,0 +1,32 @@
+{
+  "name": "deployment-manager",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-json": "^2.0.23",
+    "@types/koa-logger": "^3.1.5",
+    "tsx": "^4.7.1"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.20.0",
+    "@types/koa-compress": "^4.0.6",
+    "@types/koa-router": "^7.4.8",
+    "express": "^4.18.2",
+    "koa": "^2.15.0",
+    "koa-body": "^6.0.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-compress": "^5.1.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.1",
+    "zod": "^3.22.4"
+  }
+}
