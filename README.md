@@ -12,3 +12,9 @@ TLDR: Deploy docker images only via docker push.
 - Start deployment-manager: `docker-compose up --build`
 - Build test image: `docker build ./nginx-test -t localhost:5000/nginx`
 - Push test image to registry: `docker push localhost:5000/nginx`
+
+## Ports
+
+- registry: `5000`
+- registry-ui: `5050`
+- deployment-manager (api): `3030`
