@@ -20,5 +20,5 @@ Open browser at http://localhost:4000
 
 - registry: `5000`
 - registry-ui: `5050`
-- deployment-manager (api): `3030`
+- deployment-manager™ (api): `3030`
 - forward test-service: `4000`
