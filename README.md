@@ -1,8 +1,10 @@
 # POC Deploy via docker push
 
-## Idea
+## How does it work?
 
-Deploy docker images only via docker push.
+A push to a private registry should trigger a deployment. This is done using the notification channel from the distribution-registry. It acts like a webhook when events such as a push are triggered in the registry. The deployment-manager™ receives the event/webhook and triggers a deployment to kubernetes, knative or similar.
+
+TLDR: Deploy docker images only via docker push.
 
 ## Setup
 
